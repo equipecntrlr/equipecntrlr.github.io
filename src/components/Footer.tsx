@@ -34,7 +34,10 @@ const Footer = () => {
             <ul className="space-y-2">
               {NAV_LINKS.map((link) => (
                 <li key={link.label}>
-                  <a href={link.href} className="text-sm text-muted-foreground hover:text-foreground transition-colors">
+                  <a
+                    href={link.href}
+                    className="text-sm text-muted-foreground hover:text-foreground transition-colors"
+                  >
                     {link.label}
                   </a>
                 </li>
@@ -50,7 +53,10 @@ const Footer = () => {
             <ul className="space-y-2">
               {PARTICIPATE_LINKS.map((link) => (
                 <li key={link.label}>
-                  <a href={link.href} className="text-sm text-muted-foreground hover:text-foreground transition-colors">
+                  <a
+                    href={link.href}
+                    className="text-sm text-muted-foreground hover:text-foreground transition-colors"
+                  >
                     {link.label}
                   </a>
                 </li>

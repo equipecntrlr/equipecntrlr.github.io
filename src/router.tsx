@@ -5,12 +5,13 @@ import {
   Outlet,
   Link,
 } from "@tanstack/react-router";
-import HeroSection from "./components/HeroSection";
-import AboutSection from "./components/AboutSection";
-import CardsGrid from "./components/CardsGrid";
 import Header from "./components/Header";
 import Footer from "./components/Footer";
-import NotFound from "./pages/NotFound";
+import Home from "./pages/Home";
+import Somos from "./pages/Somos";
+import Projects from "./pages/Projects";
+import Competitions from "./pages/Competitions";
+import ContactUs from "./pages/ContactUs";
 
 // Root Route
 const rootRoute = createRootRoute({
@@ -18,33 +19,51 @@ const rootRoute = createRootRoute({
     <>
       <Header />
       <div className="flex justify-center border-b bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60 sticky top-16 z-40">
-        <div className="flex gap-4 p-2">
+        <div className="flex gap-4 p-2 overflow-x-auto">
           <Link
             to="/"
             activeProps={{
               className: "text-primary font-bold border-b-2 border-primary",
             }}
-            className="px-4 py-2 transition-colors hover:text-primary"
+            className="px-4 py-2 transition-colors hover:text-primary whitespace-nowrap"
           >
             Início
           </Link>
           <Link
-            to="/about"
+            to="/somos"
             activeProps={{
               className: "text-primary font-bold border-b-2 border-primary",
             }}
-            className="px-4 py-2 transition-colors hover:text-primary"
+            className="px-4 py-2 transition-colors hover:text-primary whitespace-nowrap"
           >
-            Sobre
+            Somos
           </Link>
           <Link
-            to="/cards"
+            to="/projects"
             activeProps={{
               className: "text-primary font-bold border-b-2 border-primary",
             }}
-            className="px-4 py-2 transition-colors hover:text-primary"
+            className="px-4 py-2 transition-colors hover:text-primary whitespace-nowrap"
           >
-            Serviços
+            Projetos
+          </Link>
+          <Link
+            to="/competitions"
+            activeProps={{
+              className: "text-primary font-bold border-b-2 border-primary",
+            }}
+            className="px-4 py-2 transition-colors hover:text-primary whitespace-nowrap"
+          >
+            Competições
+          </Link>
+          <Link
+            to="/contact"
+            activeProps={{
+              className: "text-primary font-bold border-b-2 border-primary",
+            }}
+            className="px-4 py-2 transition-colors hover:text-primary whitespace-nowrap"
+          >
+            Contato
           </Link>
         </div>
       </div>
@@ -56,35 +75,52 @@ const rootRoute = createRootRoute({
   ),
 });
 
-// Index Route (Hero)
+// Index Route (Home)
 const indexRoute = createRoute({
   getParentRoute: () => rootRoute,
   path: "/",
-  component: HeroSection,
+  component: Home,
 });
 
-// About Route
-const aboutRoute = createRoute({
+// Somos Route
+const somosRoute = createRoute({
   getParentRoute: () => rootRoute,
-  path: "/about",
-  component: AboutSection,
+  path: "/somos",
+  component: Somos,
 });
 
-// Cards Route
-const cardsRoute = createRoute({
+// Projects Route
+const projectsRoute = createRoute({
   getParentRoute: () => rootRoute,
-  path: "/cards",
-  component: CardsGrid,
+  path: "/projects",
+  component: Projects,
+});
+
+// Competitions Route
+const competitionsRoute = createRoute({
+  getParentRoute: () => rootRoute,
+  path: "/competitions",
+  component: Competitions,
+});
+
+// Contact Route
+const contactRoute = createRoute({
+  getParentRoute: () => rootRoute,
+  path: "/contact",
+  component: ContactUs,
 });
 
 // Route Tree
-const routeTree = rootRoute.addChildren([indexRoute, aboutRoute, cardsRoute]);
+const routeTree = rootRoute.addChildren([
+  indexRoute,
+  somosRoute,
+  projectsRoute,
+  competitionsRoute,
+  contactRoute,
+]);
 
 // Router Instance
-export const router = createRouter({
-  routeTree,
-  defaultNotFoundComponent: NotFound,
-});
+const router = createRouter({ routeTree });
 
 // Type Safety
 declare module "@tanstack/react-router" {

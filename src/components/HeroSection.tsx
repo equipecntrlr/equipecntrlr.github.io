@@ -21,7 +21,10 @@ const HeroSection = () => {
           MOVIDOS POR DESAFIOS.
         </h1>
         <p className="mt-4 text-base md:text-lg text-white/90 max-w-lg animate-fade-in-up [animation-delay:200ms] opacity-0">
-          Conheça o projeto de extensão dedicado a criar, desenvolver e publicar jogos digitais. Uma prova de criatividade, engenharia de software, inovação e trabalho em equipe que transforma ideias em experiências imersivas.
+          Conheça o projeto de extensão dedicado a criar, desenvolver e publicar
+          jogos digitais. Uma prova de criatividade, engenharia de software,
+          inovação e trabalho em equipe que transforma ideias em experiências
+          imersivas.
         </p>
         <div className="mt-8 animate-fade-in-up [animation-delay:400ms] opacity-0">
           <a

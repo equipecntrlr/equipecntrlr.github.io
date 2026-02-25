@@ -19,7 +19,11 @@ const Header = () => {
       <div className="container flex items-center justify-between h-16">
         {/* Logo + Brand */}
         <a href="#inicio" className="flex items-center gap-3">
-          <img src={logo} alt="CNTRL'R Logo" className="h-10 w-10 object-contain" />
+          <img
+            src={logo}
+            alt="CNTRL'R Logo"
+            className="h-10 w-10 object-contain"
+          />
           <span className="font-display text-xl font-bold tracking-tight text-foreground">
             CNTRL'R
           </span>
