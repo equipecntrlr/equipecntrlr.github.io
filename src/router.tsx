@@ -3,7 +3,6 @@ import {
   createRoute,
   createRouter,
   Outlet,
-  Link,
 } from "@tanstack/react-router";
 import Header from "./components/Header";
 import Footer from "./components/Footer";
@@ -18,56 +17,7 @@ const rootRoute = createRootRoute({
   component: () => (
     <>
       <Header />
-      <div className="flex justify-center border-b bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60 sticky top-16 z-40">
-        <div className="flex gap-4 p-2 overflow-x-auto">
-          <Link
-            to="/"
-            activeProps={{
-              className: "text-primary font-bold border-b-2 border-primary",
-            }}
-            className="px-4 py-2 transition-colors hover:text-primary whitespace-nowrap"
-          >
-            Início
-          </Link>
-          <Link
-            to="/somos"
-            activeProps={{
-              className: "text-primary font-bold border-b-2 border-primary",
-            }}
-            className="px-4 py-2 transition-colors hover:text-primary whitespace-nowrap"
-          >
-            Somos
-          </Link>
-          <Link
-            to="/projects"
-            activeProps={{
-              className: "text-primary font-bold border-b-2 border-primary",
-            }}
-            className="px-4 py-2 transition-colors hover:text-primary whitespace-nowrap"
-          >
-            Projetos
-          </Link>
-          <Link
-            to="/competitions"
-            activeProps={{
-              className: "text-primary font-bold border-b-2 border-primary",
-            }}
-            className="px-4 py-2 transition-colors hover:text-primary whitespace-nowrap"
-          >
-            Competições
-          </Link>
-          <Link
-            to="/contact"
-            activeProps={{
-              className: "text-primary font-bold border-b-2 border-primary",
-            }}
-            className="px-4 py-2 transition-colors hover:text-primary whitespace-nowrap"
-          >
-            Contato
-          </Link>
-        </div>
-      </div>
-      <main>
+      <main className="pt-16">
         <Outlet />
       </main>
       <Footer />
