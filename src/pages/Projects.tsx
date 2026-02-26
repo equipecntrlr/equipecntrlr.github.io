@@ -9,7 +9,42 @@ import {
 import imgLab0 from "@/assets/C3JAM/lab-0.jpg";
 import imgLab1 from "@/assets/C3JAM/lab-1.jpg";
 import imgLab2 from "@/assets/C3JAM/lab-2.jpg";
+import imgLab3 from "@/assets/C3JAM/lab-3.jpg";
+import imgLab4 from "@/assets/C3JAM/lab-4.jpg";
+import imgLab5 from "@/assets/C3JAM/lab-5.jpg";
+import imgPremiacao0 from "@/assets/C3JAM/premiacao-0.jpg";
+import imgPremiacao1 from "@/assets/C3JAM/premiacao-1.jpg";
+import imgPremiacao2 from "@/assets/C3JAM/premiacao-2.jpg";
+import imgPremiacao3 from "@/assets/C3JAM/premiacao-3.jpg";
+import imgPremiacao4 from "@/assets/C3JAM/premiacao-4.jpg";
+import imgPremiacao5 from "@/assets/C3JAM/premiacao-5.jpg";
+import imgPremiacao6 from "@/assets/C3JAM/premiacao-6.jpg";
 import imgPremiacao from "@/assets/C3JAM/premiacao.jpg";
+
+import {
+  Carousel,
+  CarouselContent,
+  CarouselItem,
+  CarouselNext,
+  CarouselPrevious,
+} from "@/components/ui/carousel";
+
+const CAROUSEL_IMAGES = [
+  imgPremiacao,
+  imgPremiacao0,
+  imgPremiacao1,
+  imgPremiacao2,
+  imgPremiacao3,
+  imgPremiacao4,
+  imgPremiacao5,
+  imgPremiacao6,
+  imgLab5,
+  imgLab4,
+  imgLab3,
+  imgLab2,
+  imgLab1,
+  imgLab0,
+];
 
 export default function Projects() {
   return (
@@ -121,13 +156,25 @@ export default function Projects() {
 
             {/* Right Content (Gallery Preview) */}
             <div className="space-y-4">
-              <div className="aspect-video w-full rounded-lg overflow-hidden border border-border bg-muted">
-                <img
-                  src={imgPremiacao}
-                  alt="Premiação da C.3. GGJ"
-                  className="w-full h-full object-cover"
-                  loading="lazy"
-                />
+              <div className="w-full relative">
+                <Carousel opts={{ loop: true }}>
+                  <CarouselContent>
+                    {CAROUSEL_IMAGES.map((img, idx) => (
+                      <CarouselItem key={idx}>
+                        <div className="aspect-video w-full rounded-lg overflow-hidden border border-border bg-muted">
+                          <img
+                            src={img}
+                            alt={`Premiação e Labs C.3. GGJ ${idx + 1}`}
+                            className="w-full h-full object-cover"
+                            loading="lazy"
+                          />
+                        </div>
+                      </CarouselItem>
+                    ))}
+                  </CarouselContent>
+                  <CarouselPrevious className="hidden md:flex left-2 bg-background/50 hover:bg-background/90" />
+                  <CarouselNext className="hidden md:flex right-2 bg-background/50 hover:bg-background/90" />
+                </Carousel>
               </div>
               <div className="grid grid-cols-3 gap-4">
                 <div className="aspect-square rounded-lg overflow-hidden border border-border bg-muted">
@@ -156,36 +203,6 @@ export default function Projects() {
                 </div>
               </div>
             </div>
-          </div>
-        </div>
-      </section>
-
-      {/* About the Event Context */}
-      <section className="py-20 bg-card border-t border-border">
-        <div className="container max-w-4xl">
-          <div className="prose prose-invert max-w-none">
-            <h3 className="font-display text-2xl font-bold mb-4">
-              Sobre o Nosso Site
-            </h3>
-            <p className="text-foreground/80 leading-relaxed mb-6">
-              A Escola Politécnica de Pernambuco (POLI/UPE) é uma das
-              instituições de engenharia mais respeitadas do Brasil. Nossa
-              integração com tecnologias atuais deu um passo à frente com a
-              criação da C.3. Jam.
-            </p>
-            <p className="text-foreground/80 leading-relaxed mb-6">
-              O campus que sediou o evento é composto por 11 prédios diferentes,
-              localizado na parte histórica e turística da cidade (próximo ao
-              Clube Internacional do Recife). O evento contou com uma enorme
-              dedicação da equipe de organização, infraestrutura de laboratórios
-              e segurança 24h para os jammers.
-            </p>
-            <p className="text-foreground/80 leading-relaxed">
-              O encerramento aconteceu no auditório da POLI, em um momento
-              especial de troca e celebração, onde participantes e convidados
-              puderam conhecer, jogar e prestigiar os games desenvolvidos,
-              finalizando com a premiação dos destaques! 🏆
-            </p>
           </div>
         </div>
       </section>

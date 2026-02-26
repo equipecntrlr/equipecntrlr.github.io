@@ -13,7 +13,7 @@ const NAV_LINKS = [
 ];
 
 const PARTICIPATE_LINKS = [
-  { label: "Processo Seletivo (Em breve)", href: "#" },
+  { label: "Processo Seletivo", href: "https://forms.gle/f4hMfwvSRHNdgDBt6" },
   { label: "Contato", href: "/contact" },
 ];
 

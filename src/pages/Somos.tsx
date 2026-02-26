@@ -1,9 +1,19 @@
-import AboutSection from "@/components/AboutSection";
 import nucleo0 from "@/assets/Membros/Nucleo/nucleo-0.jpg";
 import nucleo1 from "@/assets/Membros/Nucleo/nucleo-1.jpg";
 import nucleo2 from "@/assets/Membros/Nucleo/nucleo-2.jpg";
 import nucleo3 from "@/assets/Membros/Nucleo/nucleo-3.jpg";
 import grupo0 from "@/assets/Membros/Grupo/grupo-0.jpg";
+import grupo1 from "@/assets/Membros/Grupo/grupo-1.jpg";
+import grupo2 from "@/assets/Membros/Grupo/grupo-2.jpg";
+import grupo3 from "@/assets/Membros/Grupo/grupo-3.jpg";
+import grupo4 from "@/assets/Membros/Grupo/grupo-4.jpg";
+import {
+  Carousel,
+  CarouselContent,
+  CarouselItem,
+  CarouselNext,
+  CarouselPrevious,
+} from "@/components/ui/carousel";
 
 export default function Somos() {
   return (
@@ -20,7 +30,43 @@ export default function Somos() {
         </div>
       </div>
 
-      <AboutSection />
+      {/* About Content */}
+      <section id="quem-somos" className="py-20 md:py-28">
+        <div className="container grid md:grid-cols-2 gap-12 items-center">
+          <div className="border-accent-left pl-6">
+            <h2 className="font-display text-3xl md:text-5xl font-bold leading-tight">
+              SOMOS A<br />
+              CNTRL'R
+            </h2>
+            <p className="mt-4 text-sm uppercase tracking-widest text-muted-foreground">
+              Inovação em Jogos Digitais na Escola Politécnica de PE
+            </p>
+          </div>
+
+          {/* Right column — description text */}
+          <div className="space-y-6">
+            <p className="text-foreground/80 leading-relaxed text-lg">
+              Muito prazer, somos a <strong>Equipe CNTRL'R</strong>! Um núcleo
+              competitivo de desenvolvimento de jogos fundado e mantido por
+              alunos do curso de graduação em Engenharia da Computação (eComp)
+              da POLI na Universidade de Pernambuco.
+            </p>
+            <p className="text-foreground/80 leading-relaxed">
+              Nascemos do desejo de aproximar o universo dos games do cotidiano
+              universitário, buscando não apenas a excelência técnica, mas
+              também a difusão da rica cultura do nosso estado. Combinamos arte,
+              programação e game design para construir um ambiente em que
+              cultura, educação e tecnologia andam lado a lado.
+            </p>
+            <p className="text-foreground/80 leading-relaxed">
+              Nossa visão é clara: transformar a POLI-UPE num dos maiores polos
+              de desenvolvimento e fomento de jogos digitais do país,
+              colaborando ativamente com a comunidade local por meio de Game
+              Jams e exposições.
+            </p>
+          </div>
+        </div>
+      </section>
 
       {/* Team Section */}
       <section className="py-20 bg-card">
@@ -72,25 +118,21 @@ export default function Somos() {
               <ul className="space-y-3 text-lg">
                 <li className="flex items-center gap-2">
                   <span className="w-2 h-2 rounded-full bg-primary"></span>
-                  <strong>Eryck Emmanuel</strong> (Fundador)
+                  <span>Eryck Emmanuel</span>
                 </li>
                 <li className="flex items-center gap-2">
                   <span className="w-2 h-2 rounded-full bg-primary"></span>
-                  <strong>Anaclécio Brederodes</strong> (Fundador)
+                  <span>Anaclécio Brederodes</span>
                 </li>
                 <li className="flex items-center gap-2">
                   <span className="w-2 h-2 rounded-full bg-primary"></span>
-                  <strong>Talles Lins</strong> (Fundador)
+                  <span>Talles Lins</span>
                 </li>
                 <li className="flex items-center gap-2">
-                  <span className="w-2 h-2 rounded-full bg-secondary-foreground text-muted-foreground"></span>
-                  Matheus Souza de Oliveira
+                  <span className="w-2 h-2 rounded-full bg-primary"></span>
+                  <span>Matheus Souza de Oliveira</span>
                 </li>
               </ul>
-              <p className="text-muted-foreground pt-4 bg-secondary/20 p-4 rounded-md border-l-4 border-primary">
-                "Com muito trabalho duro, pavimentaremos um futuro de grande
-                sucesso!"
-              </p>
             </div>
 
             {/* Visual Grid of Core Members photos */}
@@ -98,7 +140,7 @@ export default function Somos() {
               <img
                 src={nucleo0}
                 alt="Membro do Núcleo"
-                className="rounded-lg object-cover aspect-square shadow-md"
+                className="rounded-lg object-cover aspect-square shadow-md mb-4"
                 loading="lazy"
               />
               <img
@@ -125,20 +167,34 @@ export default function Somos() {
       </section>
 
       {/* Full Team Section */}
-      <section className="py-20 bg-background border-t border-border">
-        <div className="container text-center">
+      <section className="py-20 bg-background border-t border-border overflow-hidden">
+        <div className="container text-center px-8 md:px-12">
           <h2 className="font-display text-3xl font-bold tracking-tight mb-8">
             Nossa Equipe A Todo Vapor
           </h2>
-          <div className="relative overflow-hidden rounded-xl border border-border shadow-lg inline-block w-full max-w-4xl max-h-[500px]">
-            <img
-              src={grupo0}
-              alt="Equipe CNTRL'R Reunião"
-              className="w-full h-full object-cover object-center"
-              loading="lazy"
-            />
+
+          <div className="w-full max-w-4xl mx-auto">
+            <Carousel opts={{ loop: true }}>
+              <CarouselContent>
+                {[grupo0, grupo1, grupo2, grupo3, grupo4].map((img, index) => (
+                  <CarouselItem key={index}>
+                    <div className="relative overflow-hidden rounded-xl border border-border shadow-lg w-full max-h-[500px] aspect-[16/9]">
+                      <img
+                        src={img}
+                        alt={`Equipe CNTRL'R Momentos ${index + 1}`}
+                        className="w-full h-full object-cover object-center"
+                        loading="lazy"
+                      />
+                    </div>
+                  </CarouselItem>
+                ))}
+              </CarouselContent>
+              <CarouselPrevious className="hidden md:flex -left-12" />
+              <CarouselNext className="hidden md:flex -right-12" />
+            </Carousel>
           </div>
-          <p className="mt-6 text-muted-foreground max-w-2xl mx-auto">
+
+          <p className="mt-8 text-muted-foreground max-w-2xl mx-auto">
             Desde nossa primeira reunião presencial, estamos focados em
             intensificar nossos projetos e colher o sucesso!
           </p>

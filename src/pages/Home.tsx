@@ -1,7 +1,14 @@
-import HeroSection from "@/components/HeroSection";
 import { Link } from "@tanstack/react-router";
+import heroImage from "@/assets/C3JAM/premiacao.jpg";
 
 const NEWS_ITEMS = [
+  {
+    date: "03 de Março de 2026",
+    title: "Vagas Abertas: Processo Seletivo",
+    description:
+      "Abertas 8 novas vagas na Equipe CNTRL'R (7 técnicos, 1 social media). Inscreva-se e venha desenvolver jogos conosco na POLI!",
+    link: "https://forms.gle/f4hMfwvSRHNdgDBt6",
+  },
   {
     date: "Janeiro 2026",
     title: "C.3. Global Game Jam na POLI - UPE",
@@ -16,19 +23,52 @@ const NEWS_ITEMS = [
       "Desejamos a todos um excelente fim de ano! Que 2026 venha com muitos jogos, saúde e sucesso para todos.",
     link: "#",
   },
-  {
-    date: "Novembro 2025",
-    title: "Primeira Reunião Presencial",
-    description:
-      "Nossa primeira reunião com a equipe a todo vapor para alinhar as expectativas e começar a planejar o projeto!",
-    link: "/somos",
-  },
 ];
 
 export default function Home() {
   return (
     <>
-      <HeroSection />
+      {/* Hero Section */}
+      <section id="inicio" className="relative h-screen w-full overflow-hidden">
+        {/* Background Image */}
+        <img
+          src={heroImage}
+          alt="Premiação C.3. GGJ"
+          className="absolute inset-0 w-full h-full object-cover"
+          loading="eager"
+        />
+
+        {/* Overlay de escurecimento simples */}
+        <div className="absolute inset-0 bg-black/20" />
+
+        {/* Content */}
+        <div className="relative z-10 container h-full flex flex-col justify-center items-center text-center pb-20 md:pb-28">
+          <h1 className="font-display text-4xl md:text-6xl lg:text-7xl font-bold leading-tight max-w-4xl animate-fade-in-up text-white">
+            DESENVOLVENDO O FUTURO
+            <br />
+            COMPETITIVO DOS JOGOS
+          </h1>
+          <p className="mt-6 text-base md:text-xl text-white/95 max-w-2xl animate-fade-in-up [animation-delay:200ms] opacity-0 font-medium">
+            Equipe competitiva de desenvolvimento de jogos fundada e mantida por
+            alunos do curso de graduação em eComp na Escola Politécnica de
+            Pernambuco!
+          </p>
+          <div className="mt-10 flex flex-col sm:flex-row gap-4 animate-fade-in-up [animation-delay:400ms] opacity-0">
+            <a
+              href="#noticias"
+              className="inline-block bg-primary text-primary-foreground px-8 py-3 rounded-md text-sm font-semibold hover:bg-primary/90 transition-colors shadow-lg"
+            >
+              Últimas Notícias
+            </a>
+            <Link
+              to="/somos"
+              className="inline-block border bg-secondary text-secondary-foreground px-8 py-3 rounded-md text-sm font-semibold hover:bg-secondary/90 transition-colors shadow-lg"
+            >
+              Conheça a Equipe
+            </Link>
+          </div>
+        </div>
+      </section>
 
       <section id="noticias" className="py-20 md:py-28 bg-background">
         <div className="container">

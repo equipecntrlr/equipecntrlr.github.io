@@ -47,10 +47,10 @@ export default function ContactUs() {
                     <div>
                       <h3 className="font-bold text-lg">E-mail Comercial</h3>
                       <a
-                        href="mailto:contato.cntrlr@gmail.com"
+                        href="mailto:equipecntrlr@gmail.com"
                         className="text-primary hover:underline"
                       >
-                        contato.cntrlr@upe.br
+                        equipecntrlr@gmail.com
                       </a>
                     </div>
                   </div>
