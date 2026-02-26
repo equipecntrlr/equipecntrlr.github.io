@@ -1,24 +1,38 @@
-import { Instagram, Linkedin, Github } from "lucide-react";
+import { Instagram, Linkedin, Github, Twitch } from "lucide-react";
 import logo from "@/assets/logo.png";
+
+// Using MessageSquare as a fallback for Twitch since it might not be in lucide-react by default, or we can see if Twitch is there.
+// Wait, Lucide usually has Twitch. Let's try Twitch.
 
 /** Links do footer — edite para adicionar páginas ou redes sociais */
 const NAV_LINKS = [
-  { label: "Início", href: "#inicio" },
-  { label: "Quem Somos", href: "#quem-somos" },
-  { label: "Competições", href: "#cards" },
-  { label: "Exposições", href: "#cards" },
-  { label: "Projetos", href: "#cards" },
+  { label: "Início", href: "/#inicio" },
+  { label: "Quem Somos", href: "/somos" },
+  { label: "Projetos e Eventos", href: "/projects" },
+  { label: "Competições", href: "/competitions" },
 ];
 
 const PARTICIPATE_LINKS = [
-  { label: "Processo Seletivo", href: "#" },
-  { label: "Contato", href: "#contato" },
+  { label: "Processo Seletivo (Em breve)", href: "#" },
+  { label: "Contato", href: "/contact" },
 ];
 
 const SOCIAL_LINKS = [
-  { icon: Instagram, href: "https://instagram.com", label: "Instagram" },
-  { icon: Linkedin, href: "https://linkedin.com", label: "LinkedIn" },
-  { icon: Github, href: "https://github.com", label: "GitHub" },
+  {
+    icon: Instagram,
+    href: "https://instagram.com/equipecntrlr/",
+    label: "Instagram",
+  },
+  {
+    icon: Twitch,
+    href: "https://www.twitch.tv/equipe_cntrlr",
+    label: "Twitch",
+  },
+  {
+    icon: Linkedin,
+    href: "https://linkedin.com/company/equipecntrlr/",
+    label: "LinkedIn",
+  },
 ];
 
 const Footer = () => {

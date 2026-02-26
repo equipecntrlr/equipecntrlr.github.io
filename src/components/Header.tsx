@@ -6,9 +6,9 @@ import logo from "@/assets/logo.png";
 /** Links de navegação — edite aqui para adicionar/remover itens do menu */
 const NAV_LINKS = [
   { label: "Início", to: "/" },
-  { label: "Competições", to: "/competitions" },
   { label: "Quem Somos", to: "/somos" },
   { label: "Projetos e Eventos", to: "/projects" },
+  { label: "Competições", to: "/competitions" },
   { label: "Contato", to: "/contact" },
 ];
 
