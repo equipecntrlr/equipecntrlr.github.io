@@ -39,7 +39,7 @@ export default function Home() {
         />
 
         {/* Overlay de escurecimento simples */}
-        <div className="absolute inset-0 bg-black/20" />
+        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,_var(--tw-gradient-stops))] from-[#52525b]/20 via-[#a1a1aa]/20 to-[#e4e4e7]/20" />
 
         {/* Content */}
         <div className="relative z-10 container h-full flex flex-col justify-center items-center text-center pb-20 md:pb-28">
@@ -56,7 +56,14 @@ export default function Home() {
           <div className="mt-10 flex flex-col sm:flex-row gap-4 animate-fade-in-up [animation-delay:400ms] opacity-0">
             <a
               href="#noticias"
-              className="inline-block bg-primary text-primary-foreground px-8 py-3 rounded-md text-sm font-semibold hover:bg-primary/90 transition-colors shadow-lg"
+              className="inline-block px-8 py-3 rounded-md text-sm font-semibold transition-colors shadow-lg text-white"
+              style={{ backgroundColor: "#2E54A4" }}
+              onMouseOver={(e) => {
+                e.currentTarget.style.opacity = "0.9";
+              }}
+              onMouseOut={(e) => {
+                e.currentTarget.style.opacity = "1";
+              }}
             >
               Últimas Notícias
             </a>

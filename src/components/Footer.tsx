@@ -1,5 +1,5 @@
 import { Instagram, Linkedin, Github, Twitch } from "lucide-react";
-import logo from "@/assets/logo.png";
+import logo from "@/assets/logo.svg";
 
 // Using MessageSquare as a fallback for Twitch since it might not be in lucide-react by default, or we can see if Twitch is there.
 // Wait, Lucide usually has Twitch. Let's try Twitch.

@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { Menu, X } from "lucide-react";
 import { Link } from "@tanstack/react-router";
-import logo from "@/assets/logo.png";
+import logo from "@/assets/logo.svg";
 
 /** Links de navegação — edite aqui para adicionar/remover itens do menu */
 const NAV_LINKS = [
@@ -16,7 +16,7 @@ const Header = () => {
   const [menuOpen, setMenuOpen] = useState(false);
 
   return (
-    <header className="fixed top-0 left-0 right-0 z-50 bg-background/90 backdrop-blur-md border-b border-border">
+    <header className="fixed top-0 left-0 right-0 z-50 bg-background backdrop-blur-md border-b border-border">
       <div className="container flex items-center justify-between h-16">
         {/* Logo + Brand */}
         <Link to="/" className="flex items-center gap-3">
@@ -25,7 +25,10 @@ const Header = () => {
             alt="CNTRL'R Logo"
             className="h-10 w-10 object-contain"
           />
-          <span className="font-display text-xl font-bold tracking-tight text-foreground">
+          <span
+            className="text-xl font-bold tracking-tight text-foreground"
+            style={{ fontFamily: "Bitrimus, sans-serif" }}
+          >
             CNTRL'R
           </span>
         </Link>

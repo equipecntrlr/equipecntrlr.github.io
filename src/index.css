@@ -1,5 +1,12 @@
 @import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Space+Grotesk:wght@500;600;700&display=swap");
 
+@font-face {
+  font-family: 'Bitrimus';
+  src: url('./assets/fonts/Bitrimus.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -77,39 +84,30 @@
 @layer utilities {
   .text-gradient {
     @apply bg-clip-text text-transparent;
-    background-image: linear-gradient(
-      135deg,
-      hsl(var(--accent-yellow)),
-      hsl(var(--accent-red))
-    );
+    background-image: linear-gradient(135deg,
+        hsl(var(--accent-yellow)),
+        hsl(var(--accent-red)));
   }
 
   .overlay-gradient {
-    background: linear-gradient(
-      to top,
-      rgba(0, 0, 0, 0.9) 0%,
-      rgba(0, 0, 0, 0.4) 50%,
-      rgba(0, 0, 0, 0.1) 100%
-    );
+    background: linear-gradient(to top,
+        rgba(0, 0, 0, 0.9) 0%,
+        rgba(0, 0, 0, 0.4) 50%,
+        rgba(0, 0, 0, 0.1) 100%);
   }
 
   .card-overlay {
-    background: linear-gradient(
-      to top,
-      rgba(0, 0, 0, 0.85) 0%,
-      rgba(0, 0, 0, 0.3) 60%,
-      transparent 100%
-    );
+    background: linear-gradient(to top,
+        rgba(0, 0, 0, 0.85) 0%,
+        rgba(0, 0, 0, 0.3) 60%,
+        transparent 100%);
   }
 
   .border-accent-left {
     border-left: 4px solid;
-    border-image: linear-gradient(
-        to bottom,
+    border-image: linear-gradient(to bottom,
         hsl(var(--accent-yellow)),
         hsl(var(--accent-red)),
-        hsl(var(--accent-blue))
-      )
-      1;
+        hsl(var(--accent-blue))) 1;
   }
 }
