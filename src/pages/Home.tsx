@@ -38,8 +38,8 @@ export default function Home() {
           loading="eager"
         />
 
-        {/* Overlay de escurecimento simples */}
-        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,_var(--tw-gradient-stops))] from-[#52525b]/20 via-[#a1a1aa]/20 to-[#e4e4e7]/20" />
+        {/* Radial gradient overlay that darkens the center to make text readable */}
+        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,_var(--tw-gradient-stops))] from-black/40 via-black/10 to-transparent" />
 
         {/* Content */}
         <div className="relative z-10 container h-full flex flex-col justify-center items-center text-center pb-20 md:pb-28">

@@ -26,8 +26,8 @@ const Header = () => {
             className="h-10 w-10 object-contain"
           />
           <span
-            className="text-xl font-bold tracking-tight text-foreground"
-            style={{ fontFamily: "Bitrimus, sans-serif" }}
+            className="text-[42px] tracking-tight"
+            style={{ fontFamily: "Bitrimus, sans-serif", color: "#2E54A4" }}
           >
             CNTRL'R
           </span>
